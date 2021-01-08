@@ -1,82 +1,36 @@
 <!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>王君泽的相册-junze.wang</title>
     <link rel="stylesheet" href="css/main.css">
-
     <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
-    <script type="text/javascript">
-
-        $(document).ready(function () {
-            append_img();
-
-            append_js();
-        });
-
-        //循环添加图片元素
-        function append_img() {
-
-            console.log("start append_img");
-
-            var img_count = 74;
-            var img_show = '<li data-spic="images/thumbnails/tmb_1.jpg" style="opacity: 0;"><img src="images/thumbnails/tmb_1.jpg"></li>';
-            var img_click = '<li onclick="img.play(1)" class=""><img src="images/thumbnails/tmb_1.jpg"></li>';
-            for (i = 2; i <= img_count; i++) {
-                //console.log("img" + i);
-                img_show += '<li data-spic="images/thumbnails/tmb_' + i + '.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_' + i + '.jpg"></li>';
-                img_click += '<li onclick="img.play(' + i + ')" class=""><img src="images/thumbnails/tmb_' + i + '.jpg"></li>';
-            }
-
-            console.log("append……");
-
-            $("#imagebg").append(img_show);
-            $("#small_pic").append(img_click);
-
-            console.log("end append_img");
-        }
-
-        //动态加载js
-        function append_js(){
-            console.log("start append_js");
-
-            head=document.getElementsByTagName('head').item(0);
-            script=document.createElement('script');
-            script.type='text/javascript';
-            script.src='js/imgSlider.js';
-            script.defer=true;
-            head.appendChild(script);
-
-            console.log("end append_js");
-        }
-
-    </script>
+    <script type="text/javascript" src="js/md5.min.js"></script>
+    <script type="text/javascript" src="js/main.min.js"></script>
 </head>
 
 <body>
-    <div id="junze">
-        <div id="imgRolling">
-            <ul class="imagebg" id="imagebg">
-
-            </ul>
-            <div class="scrollbg">
-                <div class="scroll">
-                    <a id="left_btn" class="pre" href="javascript:void(0)"></a>
-                    <div class="present" id="present" style="left: 644px;"></div>
-                    <div class="outScroll_pic">
-                        <ul class="scroll_img cls" id="small_pic" style="left: 0px;">
-
-                        </ul>
-                    </div>
-                    <a id="right_btn" class="next" href="javascript:void(0)"></a>
+<div id="junze">
+    <div id="imgRolling">
+        <ul class="imagebg" id="imagebg">
+            <!-- 动态加载图片元素-->
+        </ul>
+        <div class="scrollbg">
+            <div class="scroll">
+                <a id="left_btn" class="pre" href="javascript:void(0)"></a>
+                <div class="present" id="present" style="left: 644px;"></div>
+                <div class="outScroll_pic">
+                    <ul class="scroll_img cls" id="small_pic" style="left: 0px;">
+                        <!-- 动态加载图片元素-->
+                    </ul>
                 </div>
+                <a id="right_btn" class="next" href="javascript:void(0)"></a>
             </div>
         </div>
-        <!-- <script defer type="text/javascript" src="js/imgSlider.js"></script> -->
     </div>
-
+</div>
 
 </body>
 
