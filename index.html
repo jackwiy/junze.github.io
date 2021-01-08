@@ -1,171 +1,83 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>王君泽的相册-junze.wang</title>
     <link rel="stylesheet" href="css/main.css">
+
+    <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            append_img();
+
+            append_js();
+        });
+
+        //循环添加图片元素
+        function append_img() {
+
+            console.log("start append_img");
+
+            var img_count = 74;
+            var img_show = '<li data-spic="images/thumbnails/tmb_1.jpg" style="opacity: 0;"><img src="images/thumbnails/tmb_1.jpg"></li>';
+            var img_click = '<li onclick="img.play(1)" class=""><img src="images/thumbnails/tmb_1.jpg"></li>';
+            for (i = 2; i <= img_count; i++) {
+                //console.log("img" + i);
+                img_show += '<li data-spic="images/thumbnails/tmb_' + i + '.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_' + i + '.jpg"></li>';
+                img_click += '<li onclick="img.play(' + i + ')" class=""><img src="images/thumbnails/tmb_' + i + '.jpg"></li>';
+            }
+
+            console.log("append……");
+
+            $("#imagebg").append(img_show);
+            $("#small_pic").append(img_click);
+
+            console.log("end append_img");
+        }
+
+        //动态加载js
+        function append_js(){
+            console.log("start append_js");
+
+            head=document.getElementsByTagName('head').item(0);
+            script=document.createElement('script');
+            script.type='text/javascript';
+            script.src='js/imgSlider.js';
+            script.defer=true;
+            head.appendChild(script);
+
+            console.log("end append_js");
+        }
+
+    </script>
 </head>
+
 <body>
-<div id="junze">
-    <div id="imgRolling">
-        <ul class="imagebg" id="imagebg">
-            <li data-spic="images/thumbnails/tmb_1.jpg" style="opacity: 0;"><img src="images/thumbnails/tmb_1.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_2.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_2.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_3.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_3.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_4.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_4.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_5.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_5.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_6.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_6.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_7.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_7.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_8.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_8.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_9.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_9.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_10.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_10.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_11.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_11.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_12.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_12.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_13.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_13.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_14.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_14.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_15.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_15.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_16.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_16.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_17.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_17.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_18.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_18.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_19.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_19.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_20.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_20.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_21.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_21.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_22.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_22.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_23.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_23.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_24.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_24.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_25.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_25.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_26.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_26.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_27.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_27.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_28.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_28.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_29.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_29.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_30.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_30.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_31.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_31.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_32.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_32.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_33.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_33.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_34.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_34.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_35.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_35.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_36.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_36.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_37.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_37.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_38.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_38.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_39.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_39.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_40.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_40.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_41.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_41.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_42.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_42.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_43.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_43.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_44.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_44.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_45.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_45.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_46.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_46.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_47.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_47.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_48.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_48.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_49.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_49.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_50.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_50.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_51.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_51.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_52.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_52.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_53.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_53.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_54.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_54.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_55.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_55.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_56.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_56.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_57.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_57.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_58.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_58.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_59.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_59.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_60.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_60.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_61.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_61.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_62.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_62.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_63.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_63.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_64.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_64.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_65.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_65.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_66.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_66.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_67.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_67.jpg"></li>
-            <li data-spic="images/thumbnails/tmb_68.jpg" style="display: none; opacity: 0;"><img src="images/thumbnails/tmb_68.jpg"></li>
+    <div id="junze">
+        <div id="imgRolling">
+            <ul class="imagebg" id="imagebg">
 
+            </ul>
+            <div class="scrollbg">
+                <div class="scroll">
+                    <a id="left_btn" class="pre" href="javascript:void(0)"></a>
+                    <div class="present" id="present" style="left: 644px;"></div>
+                    <div class="outScroll_pic">
+                        <ul class="scroll_img cls" id="small_pic" style="left: 0px;">
 
-        </ul>
-        <div class="scrollbg">
-            <div class="scroll">
-                <a id="left_btn" class="pre" href="javascript:void(0)"></a>
-                <div class="present" id="present" style="left: 644px;"></div>
-                <div class="outScroll_pic">
-                    <ul class="scroll_img cls" id="small_pic" style="left: 0px;">
-                        <li onclick="img.play(1)" class=""><img src="images/thumbnails/tmb_1.jpg"></li>
-                        <li onclick="img.play(2)" class=""><img src="images/thumbnails/tmb_2.jpg"></li>
-                        <li onclick="img.play(3)" class=""><img src="images/thumbnails/tmb_3.jpg"></li>
-                        <li onclick="img.play(4)" class=""><img src="images/thumbnails/tmb_4.jpg"></li>
-                        <li onclick="img.play(5)" class=""><img src="images/thumbnails/tmb_5.jpg"></li>
-                        <li onclick="img.play(6)" class=""><img src="images/thumbnails/tmb_6.jpg"></li>
-                        <li onclick="img.play(7)" class=""><img src="images/thumbnails/tmb_7.jpg"></li>
-                        <li onclick="img.play(8)" class=""><img src="images/thumbnails/tmb_8.jpg"></li>
-                        <li onclick="img.play(9)" class=""><img src="images/thumbnails/tmb_9.jpg"></li>
-                        <li onclick="img.play(10)" class=""><img src="images/thumbnails/tmb_10.jpg"></li>
-                        <li onclick="img.play(11)" class=""><img src="images/thumbnails/tmb_11.jpg"></li>
-                        <li onclick="img.play(12)" class=""><img src="images/thumbnails/tmb_12.jpg"></li>
-                        <li onclick="img.play(13)" class=""><img src="images/thumbnails/tmb_13.jpg"></li>
-                        <li onclick="img.play(14)" class=""><img src="images/thumbnails/tmb_14.jpg"></li>
-                        <li onclick="img.play(15)" class=""><img src="images/thumbnails/tmb_15.jpg"></li>
-                        <li onclick="img.play(16)" class=""><img src="images/thumbnails/tmb_16.jpg"></li>
-                        <li onclick="img.play(17)" class=""><img src="images/thumbnails/tmb_17.jpg"></li>
-                        <li onclick="img.play(18)" class=""><img src="images/thumbnails/tmb_18.jpg"></li>
-                        <li onclick="img.play(19)" class=""><img src="images/thumbnails/tmb_19.jpg"></li>
-                        <li onclick="img.play(20)" class=""><img src="images/thumbnails/tmb_20.jpg"></li>
-                        <li onclick="img.play(21)" class=""><img src="images/thumbnails/tmb_21.jpg"></li>
-                        <li onclick="img.play(22)" class=""><img src="images/thumbnails/tmb_22.jpg"></li>
-                        <li onclick="img.play(23)" class=""><img src="images/thumbnails/tmb_23.jpg"></li>
-                        <li onclick="img.play(24)" class=""><img src="images/thumbnails/tmb_24.jpg"></li>
-                        <li onclick="img.play(25)" class=""><img src="images/thumbnails/tmb_25.jpg"></li>
-                        <li onclick="img.play(26)" class=""><img src="images/thumbnails/tmb_26.jpg"></li>
-                        <li onclick="img.play(27)" class=""><img src="images/thumbnails/tmb_27.jpg"></li>
-                        <li onclick="img.play(28)" class=""><img src="images/thumbnails/tmb_28.jpg"></li>
-                        <li onclick="img.play(29)" class=""><img src="images/thumbnails/tmb_29.jpg"></li>
-                        <li onclick="img.play(30)" class=""><img src="images/thumbnails/tmb_30.jpg"></li>
-                        <li onclick="img.play(31)" class=""><img src="images/thumbnails/tmb_31.jpg"></li>
-                        <li onclick="img.play(32)" class=""><img src="images/thumbnails/tmb_32.jpg"></li>
-                        <li onclick="img.play(33)" class=""><img src="images/thumbnails/tmb_33.jpg"></li>
-                        <li onclick="img.play(34)" class=""><img src="images/thumbnails/tmb_34.jpg"></li>
-                        <li onclick="img.play(35)" class=""><img src="images/thumbnails/tmb_35.jpg"></li>
-                        <li onclick="img.play(36)" class=""><img src="images/thumbnails/tmb_36.jpg"></li>
-                        <li onclick="img.play(37)" class=""><img src="images/thumbnails/tmb_37.jpg"></li>
-                        <li onclick="img.play(38)" class=""><img src="images/thumbnails/tmb_38.jpg"></li>
-                        <li onclick="img.play(39)" class=""><img src="images/thumbnails/tmb_39.jpg"></li>
-                        <li onclick="img.play(40)" class=""><img src="images/thumbnails/tmb_40.jpg"></li>
-                        <li onclick="img.play(41)" class=""><img src="images/thumbnails/tmb_41.jpg"></li>
-                        <li onclick="img.play(42)" class=""><img src="images/thumbnails/tmb_42.jpg"></li>
-                        <li onclick="img.play(43)" class=""><img src="images/thumbnails/tmb_43.jpg"></li>
-                        <li onclick="img.play(44)" class=""><img src="images/thumbnails/tmb_44.jpg"></li>
-                        <li onclick="img.play(45)" class=""><img src="images/thumbnails/tmb_45.jpg"></li>
-                        <li onclick="img.play(46)" class=""><img src="images/thumbnails/tmb_46.jpg"></li>
-                        <li onclick="img.play(47)" class=""><img src="images/thumbnails/tmb_47.jpg"></li>
-                        <li onclick="img.play(48)" class=""><img src="images/thumbnails/tmb_48.jpg"></li>
-                        <li onclick="img.play(49)" class=""><img src="images/thumbnails/tmb_49.jpg"></li>
-                        <li onclick="img.play(50)" class=""><img src="images/thumbnails/tmb_50.jpg"></li>
-                        <li onclick="img.play(51)" class=""><img src="images/thumbnails/tmb_51.jpg"></li>
-                        <li onclick="img.play(52)" class=""><img src="images/thumbnails/tmb_52.jpg"></li>
-                        <li onclick="img.play(53)" class=""><img src="images/thumbnails/tmb_53.jpg"></li>
-                        <li onclick="img.play(54)" class=""><img src="images/thumbnails/tmb_54.jpg"></li>
-                        <li onclick="img.play(55)" class=""><img src="images/thumbnails/tmb_55.jpg"></li>
-                        <li onclick="img.play(56)" class=""><img src="images/thumbnails/tmb_56.jpg"></li>
-                        <li onclick="img.play(57)" class=""><img src="images/thumbnails/tmb_57.jpg"></li>
-                        <li onclick="img.play(58)" class=""><img src="images/thumbnails/tmb_58.jpg"></li>
-                        <li onclick="img.play(59)" class=""><img src="images/thumbnails/tmb_59.jpg"></li>
-                        <li onclick="img.play(60)" class=""><img src="images/thumbnails/tmb_60.jpg"></li>
-                        <li onclick="img.play(61)" class=""><img src="images/thumbnails/tmb_61.jpg"></li>
-                        <li onclick="img.play(62)" class=""><img src="images/thumbnails/tmb_62.jpg"></li>
-                        <li onclick="img.play(63)" class=""><img src="images/thumbnails/tmb_63.jpg"></li>
-                        <li onclick="img.play(64)" class=""><img src="images/thumbnails/tmb_64.jpg"></li>
-                        <li onclick="img.play(65)" class=""><img src="images/thumbnails/tmb_65.jpg"></li>
-                        <li onclick="img.play(66)" class=""><img src="images/thumbnails/tmb_66.jpg"></li>
-                        <li onclick="img.play(67)" class=""><img src="images/thumbnails/tmb_67.jpg"></li>
-                        <li onclick="img.play(68)" class=""><img src="images/thumbnails/tmb_68.jpg"></li>
-
-                    </ul>
+                        </ul>
+                    </div>
+                    <a id="right_btn" class="next" href="javascript:void(0)"></a>
                 </div>
-                <a id="right_btn" class="next" href="javascript:void(0)"></a>
             </div>
         </div>
+        <!-- <script defer type="text/javascript" src="js/imgSlider.js"></script> -->
     </div>
-    <script type="text/javascript" src="js/imgSlider.js"></script>
-    <script type="text/javascript" src="js/imgSlider.js"></script>
-</div>
 
 
 </body>
+
 </html>
